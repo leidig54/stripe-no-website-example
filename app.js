@@ -45,9 +45,11 @@ app.get(
   "/purchase/:userId/:productId/:testMode",
   async function (req, res, next) {
     // - Render our redirection page with context
+
+    const testMode = req.params.testMode ?? false;
     res.render("redirectToCheckout", {
       user_id: req.params.userId,
-      key: req.params.testMode == "true" ? STRIPE_KEY_TEST : STRIPE_KEY,
+      key: testMode == "true" ? STRIPE_KEY_TEST : STRIPE_KEY,
       success_url: SUCCESS_URL,
       cancel_url: CANCEL_URL,
       product_id: req.params.productId,
