@@ -47,7 +47,7 @@ app.get(
     // - Render our redirection page with context
     res.render("redirectToCheckout", {
       user_id: req.params.userId,
-      key: req.params.testMode == true ? STRIPE_KEY_TEST : STRIPE_KEY,
+      key: req.params.testMode == "true" ? STRIPE_KEY_TEST : STRIPE_KEY,
       success_url: SUCCESS_URL,
       cancel_url: CANCEL_URL,
       product_id: req.params.productId,
