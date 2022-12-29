@@ -19,7 +19,9 @@ script(type="text/javascript").
                     price: '#{product_id}',
                     quantity: 1,
             }],
-                mode: 'subscription',
+                mode: 'payment',
+                customerEmail: '#{email}',
+                paymentMethodTypes: ['card', 'klarna'],
                 successUrl: '#{success_url}' + '#{product_id}/'.replace("_", "-").toLowerCase() + '?userID=' + '#{user_id}',
                 cancelUrl: '#{cancel_url}',
                 clientReferenceId: "#{user_id}"
