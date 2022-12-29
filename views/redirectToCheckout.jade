@@ -14,7 +14,7 @@ script(type="text/javascript").
     $(document).ready(function() {
         try {
             var stripe = Stripe("#{key}");
-            stripe.redirectToCheckout({
+            stripe.checkout.sessions.create({
                 lineItems: [{
                     price: '#{product_id}',
                     quantity: 1,

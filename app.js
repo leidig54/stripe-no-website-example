@@ -47,7 +47,7 @@ app.get(
     // - Render our redirection page with context
 
     const testMode = req.params.testMode ?? false;
-    res.render("redirectToCheckout", {
+    res.render("/create-checkout-session", {
       user_id: req.params.userId,
       email: req.params.email,
       key: testMode == "true" ? STRIPE_KEY_TEST : STRIPE_KEY,
