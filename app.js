@@ -42,7 +42,7 @@ app.get("/", function (req, res, next) {
 
 // --- Endpoints
 app.get(
-  "/purchase/:userId/:productId/:testMode",
+  "/purchase/:userId/:productId/:email/:testMode",
   async function (req, res, next) {
     // - Render our redirection page with context
 
